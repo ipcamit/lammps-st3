@@ -1,0 +1,24 @@
+<snippet>
+    <content><![CDATA[
+###INPUT DATA FILE###
+read_data ${1:lammps_data.data}
+
+###OUTPUT lammpstrj file for VMD###
+dump ${6:TRJ1} ${5:all} ${4:atom} ${2:10000} ${3:lammps_data_output}.lammpstrj
+
+###Binary Restart File###
+restart ${7:100000} *.restart
+
+###Output for the log file###
+thermo_style   ${8:custom step etotal evdwl ecoul lx ly lz pxx pyy pzz temp}
+thermo         ${9:5000}
+
+###Simulation Timestep###
+timestep ${10:1}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>data</tabTrigger> 
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>text.lammps</scope>
+    <description>LAMMPS INPUT/OUTPUT settings</description>
+</snippet>

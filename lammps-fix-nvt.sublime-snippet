@@ -1,0 +1,12 @@
+<snippet>
+    <content><![CDATA[
+fix ${2:NVT1} ${3:all} nvt temp ${4:300} 300 ${5:100} tchain 1
+run ${1:1000000}
+unfix ${2:NVT1}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>nvt</tabTrigger> 
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>text.lammps</scope>
+    <description>LAMMPS FIX settings</description>
+</snippet>

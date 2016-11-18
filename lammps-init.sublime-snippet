@@ -1,0 +1,17 @@
+<snippet>
+    <content><![CDATA[
+# Intialization
+units          real
+dimension      3
+boundary       p p p
+atom_style     full
+kspace_style pppm 1.0e-4
+neighbor 2.0 bin
+neigh_modify delay 0 every 1 check yes
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>init</tabTrigger> 
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>text.lammps</scope>
+    <description>Initial LAMMPS settings</description>
+</snippet>

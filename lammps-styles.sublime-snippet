@@ -1,0 +1,18 @@
+<snippet>
+    <content><![CDATA[
+#Atom Definations
+
+pair_style ${1:lj/cut/coul/long} ${2:10} ${2:10} 
+angle_style ${3:harmonic}
+bond_style ${4:harmonic}
+improper_style $5
+dihedral_style ${6:fourier}
+special_bonds $7
+
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>styles</tabTrigger> 
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>text.lammps</scope>
+    <description>LAMMPS STYLES settings</description>
+</snippet>

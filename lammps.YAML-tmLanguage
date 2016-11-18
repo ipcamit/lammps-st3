@@ -1,0 +1,41 @@
+# [PackageDev] target_format: plist, ext: tmLanguage
+---
+name: lammps
+scopeName: text.lammps
+fileTypes: [in,lammps]
+uuid: 0c25def8-752f-4bbe-b06f-a307d858c465
+
+patterns:
+- comment: comment in lammps
+  name: comment.line.number-sign
+  match: \#.+
+
+- comment: digits
+  name: constant.numeric
+  match: \b[0-9]+([.][0-9]+)?\b
+
+- comment: style keyword
+  name: keyword.operator.lammps
+  match: \b(all|atom_modify|atom_style|boundary|dimension|newton|processors|units|create_atoms|create_box|lattice|region|replicate|angle_coeff|angle_style|bond_coeff|bond_style|dielectric|dihedral_coeff|dihedral_style|improper_coeff|improper_style|kspace_modify|kspace_style|pair_coeff|pair_modify|pair_style|pair_write|special_bonds|comm_style|group|mass|min_modify|min_style|neigh_modify|neighbor|reset_timestep|run_style|set|timestep|velocity|fix_modify|compute|compute_modify|uncompute|thermo|thermo_modify|thermo_style|write_data|delete_atoms|delete_bonds|displace_atoms|change_box|minimize|rerun|run|temper|clear|echo|if|include|jump|label|log|next|print|shell|variable)\b
+
+- comment: read data
+  name: markup.bold.lammps
+  match: \b(read_data|read_dump|read_restart|restart|write_restart|dump|dump_modify|undump|write_dump)\b(.+)
+  captures:
+    '1' : {name: markup.quote.lammps}
+    '2' : {name: string.quoted.double}
+
+- comment: fix and unfix
+  name: markup.quote.lammps
+  match: \b(fix|unfix)\b
+  captures:
+    '1' : {name: string.quoted.double.lammps}
+
+- comment: fix commands
+  name: string.quoted.other
+  match: \b(adapt|addforce|append/atoms|atom/swap|aveforce|ave/atom|ave/chunk|ave/correlate|ave/histo|ave/spatial|ave/time|balance|bond/break|bond/create|bond/swap|box/relax|deform|deposit|drag|dt/reset|efield|enforce2d|evaporate|external|freeze|gcmc|gld|gravity|heat|indent|langevin|lineforce|momentum|move|msst|neb|nph|nphug|nph/asphere|nph/body|nph/sphere|npt|npt/asphere|npt/body|npt/sphere|nve|nve/asphere|nve/asphere/noforce|nve/body|nve/limit|nve/line|nve/noforce|nve/sphere|nve/tri|nvt|nvt/asphere|nvt/body|nvt/sllod|nvt/sphere|oneway|orient/fcc|planeforce|poems|pour|press/berendsen|print|property/atom|qeq/comb|reax/bonds|restrain|rigid|rigid/nph|rigid/npt|smd|colvar|plumed|rigid/nve|rigid/nvt|rigid/small|rigid/small/nph|rigid/small/npt|rigid/small/nve|rigid/small/nvt|setforce|shake|spring|spring/rg|spring/self|srd|store/force|store/state|temp/berendsen|temp/csld|temp/csvr|temp/rescale|tfmc|thermal/conductivity|tmd|ttm|tune/kspace|vector|viscosity|viscous|wall/colloid|wall/gran|wall/harmonic|wall/lj1043|wall/lj126|wall/lj93|wall/piston|wall/reflect|wall/region|wall/srd)\b
+
+- comment: fix keyword
+  name: storage.type.lammps
+  match: \b(custom|step|etotal|evdwl|ecoul|pxx|pyy|pzz|temp|iso|aniso|tri|x|y|z|xy|yz|xz|couple|tchain|pchain|mtk|tloop|ploop|nreset|drag|dilate|scalexy|scaleyz|scalexz|flip|fixedpoint|update)\b
+...
