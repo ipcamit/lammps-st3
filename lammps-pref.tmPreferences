@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plist version="1.0">
+<dict>
+    <key>name</key>
+    <string>lammps-comments</string>
+    <key>scope</key>
+    <string>text.lammps</string>
+    <key>settings</key>
+    <dict>
+        <!-- <key>decreaseIndentPattern</key> -->
+        <!-- <string>^\s*(elif|else|except|finally)\b.*:</string> -->
+        <!-- <key>increaseIndentPattern</key> -->
+        <!-- <string>^\s*(class|(\basync\s+)?(def|for|with)|elif|else|except|finally|if|try|while)\b.*:\s*$</string> -->
+        <!-- <key>disableIndentNextLinePattern</key> -->
+        <!-- <string></string> -->
+        <key>shellVariables</key>
+        <array>
+            <dict>
+                <key>name</key>
+                <string>TM_COMMENT_START</string>
+                <key>value</key>
+                <string># </string>
+            </dict>
+        </array>
+    </dict>
+</dict>
+</plist>
